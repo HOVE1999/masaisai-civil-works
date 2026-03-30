@@ -6,7 +6,11 @@
 <title>Masaisai Civil Works</title>
 
 <style>
-* {margin:0;padding:0;box-sizing:border-box;}
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
 body {
   font-family: Arial, sans-serif;
@@ -16,25 +20,18 @@ body {
 
 /* HERO */
 header {
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('project2.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 80vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  background:#0b1218;
+  padding:80px 20px;
   text-align:center;
-  padding:20px;
 }
 
 header h1 {
-  font-size:3rem;
+  font-size:2.5rem;
   color:#d4af37;
 }
 
 header p {
   margin:15px 0;
-  font-size:1.1rem;
 }
 
 .btn {
@@ -48,7 +45,7 @@ header p {
 
 /* SECTION */
 .section {
-  padding:70px 20px;
+  padding:60px 20px;
   text-align:center;
 }
 
@@ -62,48 +59,66 @@ header p {
   display:grid;
   grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
   gap:20px;
-  margin-top:30px;
 }
 
 .card {
   background:#121c24;
-  padding:25px;
+  padding:20px;
   border-radius:12px;
   border:1px solid rgba(212,175,55,0.2);
-  transition:0.3s;
-}
-
-.card:hover {
-  transform:translateY(-5px);
 }
 
 /* GALLERY */
 .gallery {
   display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-  gap:20px;
-  margin-top:30px;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
 }
 
 .gallery img {
   width:100%;
-  height:280px;
+  height:260px;
   object-fit:cover;
-  border-radius:12px;
-  transition:0.4s;
+  border-radius:10px;
+  transition:0.3s;
 }
 
 .gallery img:hover {
-  transform:scale(1.07);
+  transform:scale(1.05);
 }
 
 /* CONTACT */
 .contact {
   background:#121c24;
-  padding:30px;
+  padding:25px;
   border-radius:12px;
   max-width:600px;
   margin:auto;
+}
+
+/* FLOATING BUTTONS */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  font-size: 22px;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.call-float {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #d4af37;
+  color: black;
+  font-size: 22px;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
 }
 
 /* FOOTER */
@@ -111,7 +126,6 @@ footer {
   background:#060b10;
   padding:20px;
   text-align:center;
-  color:#aaa;
 }
 </style>
 </head>
@@ -119,11 +133,9 @@ footer {
 <body>
 
 <header>
-  <div>
-    <h1>MASAISAI CIVIL WORKS</h1>
-    <p>Premium Construction • Ceilings • Finishing</p>
-    <a class="btn" href="https://wa.me/263786596759">Get a Quote</a>
-  </div>
+  <h1>MASAISAI CIVIL WORKS</h1>
+  <p>Premium Construction • Ceilings • Finishing</p>
+  <a class="btn" href="#quote">Get a Quote</a>
 </header>
 
 <section class="section">
@@ -133,6 +145,8 @@ footer {
     <div class="card">Interior Finishing</div>
     <div class="card">Renovations</div>
     <div class="card">Civil Works</div>
+    <div class="card">Brick Work</div>
+    <div class="card">Project Management</div>
   </div>
 </section>
 
@@ -145,18 +159,47 @@ footer {
   </div>
 </section>
 
+<section class="section" id="quote">
+  <h2>Get a Quote</h2>
+  <div class="services">
+    <div class="card">
+      <h3>WhatsApp</h3>
+      <a class="btn" href="https://wa.me/263786596759">Chat Now</a>
+    </div>
+
+    <div class="card">
+      <h3>Email</h3>
+      <a class="btn" href="mailto:aldridgehove@gmail.com">Send Email</a>
+    </div>
+  </div>
+</section>
+
 <section class="section">
-  <h2>Contact Us</h2>
+  <h2>Contact</h2>
   <div class="contact">
-    <p><strong>Phone:</strong> +263 78 659 6759</p>
-    <p><strong>Email:</strong> aldridgehove@gmail.com</p>
-    <p><strong>Location:</strong> 32 Cork Road, Harare</p>
+    <p><strong>Admin (WhatsApp):</strong> 
+      <a href="https://wa.me/263786596759">+263 78 659 6759</a>
+    </p>
+
+    <p><strong>Call Engineer Aaldrin Hove:</strong></p>
+
+    <p>
+      <a href="tel:+263717663039">📞 +263 71 766 3039</a><br>
+      <a href="tel:+263783610479">📞 078 361 0479</a>
+    </p>
+
+    <p>Email: aldridgehove@gmail.com</p>
+    <p>32 Cork Road, Harare</p>
   </div>
 </section>
 
 <footer>
   © 2026 Masaisai Civil Works
 </footer>
+
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/263786596759" class="whatsapp-float">💬</a>
+<a href="tel:+263717663039" class="call-float">📞</a>
 
 </body>
 </html>
