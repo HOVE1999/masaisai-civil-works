@@ -1,134 +1,233 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Masaisai Civil Works</title>
-
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
 
     body {
-      color: white;
+      font-family: Arial, sans-serif;
+      background:#0b1218;
+      color:#ffffff;
+      line-height:1.6;
     }
 
-    /* HERO SECTION */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                  url('https://images.unsplash.com/photo-1503387762-592deb58ef4e');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    header {
+      background:#0f1720;
+      text-align:center;
+      padding:50px 20px;
+      border-bottom:1px solid rgba(212,175,55,0.2);
     }
 
     .logo {
-      width: 220px;
-      margin-bottom: 20px;
+      width:110px;
+      max-width:100%;
+      margin-bottom:15px;
+      border-radius:12px;
     }
 
     h1 {
-      font-size: 48px;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
+      color:#d4af37;
+      font-size:2.4rem;
+      margin-bottom:10px;
     }
 
-    h2 {
-      font-size: 20px;
-      color: #ccc;
-      margin-bottom: 30px;
+    .tagline {
+      font-size:1.05rem;
+      color:#d7d7d7;
+      margin-bottom:20px;
     }
 
     .btn {
-      padding: 12px 25px;
-      background: #0b5d3b;
-      border: none;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 5px;
-      text-decoration: none;
+      display:inline-block;
+      background:#d4af37;
+      color:#111;
+      padding:12px 22px;
+      text-decoration:none;
+      border-radius:8px;
+      font-weight:bold;
     }
 
-    .btn:hover {
-      background: #0f7a4d;
-    }
-
-    /* ABOUT */
     .section {
-      padding: 60px 20px;
-      text-align: center;
-      background: #111;
+      padding:60px 20px;
+      text-align:center;
     }
 
-    .section h3 {
-      margin-bottom: 20px;
-      font-size: 28px;
+    .section h2 {
+      color:#d4af37;
+      margin-bottom:18px;
+      font-size:2rem;
     }
 
-    .section p {
-      max-width: 600px;
-      margin: auto;
-      color: #aaa;
+    .lead {
+      max-width:800px;
+      margin:0 auto 30px;
+      color:#d0d0d0;
     }
 
-    /* CONTACT */
-    .contact {
-      background: #0b5d3b;
-      padding: 40px;
-      text-align: center;
+    .services, .quote-options {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:20px;
+      max-width:1100px;
+      margin:30px auto 0;
     }
 
-    .contact p {
-      margin: 10px 0;
+    .card {
+      background:#121c24;
+      padding:25px 20px;
+      border-radius:14px;
+      border:1px solid rgba(212,175,55,0.18);
+    }
+
+    .gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:18px;
+      max-width:1100px;
+      margin:30px auto 0;
+    }
+
+    .gallery img {
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      border-radius:12px;
+      display:block;
+    }
+
+    .about-box, .contact-box {
+      max-width:800px;
+      margin:25px auto 0;
+      background:#121c24;
+      padding:28px;
+      border-radius:14px;
+      border:1px solid rgba(212,175,55,0.18);
+    }
+
+    .contact-box a {
+      color:#d4af37;
+      text-decoration:none;
+    }
+
+    footer {
+      background:#060b10;
+      text-align:center;
+      padding:20px;
+      color:#aaa;
+      margin-top:30px;
+    }
+
+    .whatsapp-float, .call-float {
+      position:fixed;
+      right:20px;
+      width:54px;
+      height:54px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-decoration:none;
+      font-size:24px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.35);
+      z-index:999;
+    }
+
+    .whatsapp-float {
+      bottom:20px;
+      background:#25D366;
+      color:#fff;
+    }
+
+    .call-float {
+      bottom:85px;
+      background:#d4af37;
+      color:#111;
     }
   </style>
-
 </head>
-
 <body>
 
-  <!-- HERO -->
+  <header>
+    <img src="logo.png" alt="Masaisai Civil Works Logo" class="logo">
+    <h1>MASAISAI CIVIL WORKS</h1>
+    <p class="tagline">Premium Construction • Brick Work • Ceilings • Finishing • Project Management</p>
+    <a href="#quote" class="btn">Get a Quote</a>
+  </header>
 
-  <div class="hero">
-    <img src="logo.png" class="logo" alt="Masaisai Logo">
+  <section class="section">
+    <h2>Our Services</h2>
+    <p class="lead">We deliver reliable, neat and professional workmanship for residential, commercial and civil projects.</p>
+    <div class="services">
+      <div class="card">Ceiling Installation</div>
+      <div class="card">Interior Finishing</div>
+      <div class="card">Renovations</div>
+      <div class="card">Civil Works</div>
+      <div class="card">Brick Work</div>
+      <div class="card">Project Management</div>
+    </div>
+  </section>
 
-```
-<h1>MASAISAI</h1>
-<h2>CIVIL WORKS</h2>
+  <section class="section">
+    <h2>Our Work</h2>
+    <p class="lead">A look at some of our project stages and completed finishes.</p>
+    <div class="gallery">
+      <img src="project1.jpg" alt="Project 1">
+      <img src="project2.jpg" alt="Project 2">
+      <img src="project3.jpg" alt="Project 3">
+    </div>
+  </section>
 
-<a href="https://wa.me/263786596759" class="btn">Contact Us</a>
-```
+  <section class="section">
+    <h2>About Us</h2>
+    <div class="about-box">
+      <p>
+        Masaisai Civil Works is committed to quality construction, clean finishes, reliable execution,
+        and professional project delivery. We serve clients who want durable work, trusted workmanship,
+        and a team that pays attention to detail.
+      </p>
+    </div>
+  </section>
 
-  </div>
+  <section class="section" id="quote">
+    <h2>Get a Quote</h2>
+    <p class="lead">Choose the best way to reach us for enquiries and quotations.</p>
+    <div class="quote-options">
+      <div class="card">
+        <h3 style="margin-bottom:12px; color:#d4af37;">WhatsApp</h3>
+        <p style="margin-bottom:15px;">Chat with our admin directly for quick assistance.</p>
+        <a class="btn" href="https://wa.me/263786596759">Chat on WhatsApp</a>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:12px; color:#d4af37;">Email</h3>
+        <p style="margin-bottom:15px;">Send your project details for a formal quotation.</p>
+        <a class="btn" href="mailto:aldridgehove@gmail.com">Send Email</a>
+      </div>
+    </div>
+  </section>
 
-  <!-- ABOUT -->
+  <section class="section">
+    <h2>Contact</h2>
+    <div class="contact-box">
+      <p><strong>Admin (WhatsApp):</strong> <a href="https://wa.me/263786596759">+263 78 659 6759</a></p>
+      <p><strong>Call Engineer Aaldrin Hove:</strong></p>
+      <p>
+        <a href="tel:+263717663039">+263 71 766 3039</a> /
+        <a href="tel:+263783610479">078 361 0479</a>
+      </p>
+      <p><strong>Email:</strong> <a href="mailto:aldridgehove@gmail.com">aldridgehove@gmail.com</a></p>
+      <p><strong>Address:</strong> 32 Cork Road, Harare</p>
+    </div>
+  </section>
 
-  <div class="section">
-    <h3>About Us</h3>
-    <p>
-      Masaisai Civil Works specializes in professional construction,
-      infrastructure development, and civil engineering solutions.
-      We deliver quality, reliability, and excellence in every project.
-    </p>
-  </div>
+  <footer>
+    © 2026 Masaisai Civil Works
+  </footer>
 
-  <!-- CONTACT -->
-
-  <div class="contact">
-    <p><strong>📍 Address:</strong> 32 Cork Road, Harare</p>
-    <p><strong>📞 Phone/WhatsApp:</strong> +263 786 596 759</p>
-    <p><strong>📧 Email:</strong> aldridgehove@gmail.com</p>
-  </div>
+  <a href="https://wa.me/263786596759" class="whatsapp-float">💬</a>
+  <a href="tel:+263717663039" class="call-float">📞</a>
 
 </body>
 </html>
