@@ -3,227 +3,382 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Masaisai Civil Works</title>
+  <title>Masaisai Civil Works | Construction & Civil Engineering</title>
+
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       font-family: Arial, sans-serif;
-      background:#0b1218;
-      color:#ffffff;
-      line-height:1.6;
+      background: #071017;
+      color: #ffffff;
+      line-height: 1.7;
     }
 
     header {
+      min-height: 100vh;
       background:
-        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.82)),
         url('project2.jpg') center/cover no-repeat;
-      text-align:center;
-      padding:90px 20px;
-      border-bottom:1px solid rgba(212,175,55,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      animation: fadeUp 1.2s ease;
     }
 
     .logo {
-      width:110px;
-      max-width:100%;
-      margin-bottom:15px;
-      border-radius:12px;
+      width: 120px;
+      margin-bottom: 20px;
+      border-radius: 16px;
       background: rgba(255,255,255,0.08);
-      padding: 8px;
+      padding: 10px;
+      border: 1px solid rgba(212,175,55,0.4);
     }
 
     h1 {
-      color:#d4af37;
-      font-size:2.4rem;
-      margin-bottom:10px;
+      font-size: 3rem;
+      color: #d4af37;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
     }
 
     .tagline {
-      font-size:1.05rem;
-      color:#f0f0f0;
-      margin-bottom:20px;
+      font-size: 1.15rem;
+      color: #eeeeee;
+      margin-bottom: 30px;
     }
 
     .btn {
-      display:inline-block;
-      background:#d4af37;
-      color:#111;
-      padding:12px 22px;
-      text-decoration:none;
-      border-radius:8px;
-      font-weight:bold;
+      display: inline-block;
+      background: #d4af37;
+      color: #111;
+      padding: 13px 26px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #f3cf62;
+      transform: translateY(-3px);
     }
 
     .section {
-      padding:60px 20px;
-      text-align:center;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .section:nth-child(even) {
+      background: #0b151d;
     }
 
     .section h2 {
-      color:#d4af37;
-      margin-bottom:18px;
-      font-size:2rem;
+      color: #d4af37;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
     }
 
     .lead {
-      max-width:800px;
-      margin:0 auto 30px;
-      color:#d0d0d0;
+      max-width: 850px;
+      margin: 0 auto 35px;
+      color: #cfcfcf;
     }
 
-    .services, .quote-options {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-      gap:20px;
-      max-width:1100px;
-      margin:30px auto 0;
+    .services,
+    .quote-options,
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+      max-width: 1150px;
+      margin: 35px auto 0;
     }
 
     .card {
-      background:#121c24;
-      padding:25px 20px;
-      border-radius:14px;
-      border:1px solid rgba(212,175,55,0.18);
+      background: linear-gradient(145deg, #101d26, #0b151d);
+      padding: 30px 22px;
+      border-radius: 18px;
+      border: 1px solid rgba(212,175,55,0.25);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: #d4af37;
+    }
+
+    .card h3 {
+      color: #d4af37;
+      margin-bottom: 10px;
     }
 
     .gallery {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-      gap:18px;
-      max-width:1100px;
-      margin:30px auto 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1150px;
+      margin: 35px auto 0;
     }
 
     .gallery img {
-      width:100%;
-      height:260px;
-      object-fit:cover;
-      border-radius:12px;
-      display:block;
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid rgba(212,175,55,0.25);
+      transition: 0.3s;
     }
 
-    .about-box, .contact-box {
-      max-width:800px;
-      margin:25px auto 0;
-      background:#121c24;
-      padding:28px;
-      border-radius:14px;
-      border:1px solid rgba(212,175,55,0.18);
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .about-box,
+    .contact-box {
+      max-width: 950px;
+      margin: 30px auto 0;
+      background: linear-gradient(145deg, #101d26, #0b151d);
+      padding: 38px;
+      border-radius: 20px;
+      border: 1px solid rgba(212,175,55,0.25);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+      text-align: left;
+    }
+
+    .about-box p {
+      margin-bottom: 16px;
+      color: #dddddd;
+    }
+
+    .highlight {
+      color: #d4af37;
+      font-weight: bold;
+    }
+
+    .contact-box {
+      text-align: center;
     }
 
     .contact-box a {
-      color:#d4af37;
-      text-decoration:none;
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     footer {
-      background:#060b10;
-      text-align:center;
-      padding:20px;
-      color:#aaa;
-      margin-top:30px;
+      background: #03080c;
+      text-align: center;
+      padding: 25px;
+      color: #aaa;
     }
 
-    .whatsapp-float, .call-float {
-      position:fixed;
-      right:20px;
-      width:54px;
-      height:54px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-decoration:none;
-      font-size:24px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.35);
-      z-index:999;
+    .whatsapp-float,
+    .call-float {
+      position: fixed;
+      right: 20px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 25px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+      z-index: 999;
     }
 
     .whatsapp-float {
-      bottom:20px;
-      background:#25D366;
-      color:#fff;
+      bottom: 20px;
+      background: #25D366;
+      color: #fff;
     }
 
     .call-float {
-      bottom:85px;
-      background:#d4af37;
-      color:#111;
+      bottom: 90px;
+      background: #d4af37;
+      color: #111;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.1rem;
+      }
+
+      .tagline {
+        font-size: 1rem;
+      }
+
+      .section {
+        padding: 60px 16px;
+      }
+
+      .about-box,
+      .contact-box {
+        padding: 25px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <header>
-    <img src="logo.png" alt="Masaisai Civil Works Logo" class="logo">
-    <h1>MASAISAI CIVIL WORKS</h1>
-    <p class="tagline">Premium Construction • Brick Work • Ceilings • Finishing • Project Management</p>
-    <a href="#quote" class="btn">Get a Quote</a>
+    <div class="hero-content">
+      <img src="logo.png" alt="Masaisai Civil Works Logo" class="logo">
+      <h1>MASAISAI CIVIL WORKS</h1>
+      <p class="tagline">
+        Premium Construction • Civil Works • Brick Work • Ceilings • Finishing • Equipment Hire
+      </p>
+      <a href="#quote" class="btn">Request a Quote</a>
+    </div>
   </header>
 
   <section class="section">
     <h2>Our Services</h2>
-    <p class="lead">We deliver reliable, neat and professional workmanship for residential, commercial and civil projects.</p>
+    <p class="lead">
+      We provide professional construction, civil engineering, finishing, project management and equipment hire services for residential, commercial and infrastructure projects.
+    </p>
+
     <div class="services">
-      <div class="card">Ceiling Installation</div>
-      <div class="card">Interior Finishing</div>
-      <div class="card">Renovations</div>
-      <div class="card">Civil Works</div>
-      <div class="card">Brick Work</div>
-      <div class="card">Project Management</div>
+      <div class="card">
+        <h3>Construction</h3>
+        <p>Residential and commercial building solutions.</p>
+      </div>
+      <div class="card">
+        <h3>Civil Works</h3>
+        <p>Site preparation, foundations and structural works.</p>
+      </div>
+      <div class="card">
+        <h3>Brick Work</h3>
+        <p>Neat, durable and professional bricklaying.</p>
+      </div>
+      <div class="card">
+        <h3>Ceilings</h3>
+        <p>Clean ceiling installation and interior finishing.</p>
+      </div>
+      <div class="card">
+        <h3>Renovations</h3>
+        <p>Upgrades, repairs and property improvements.</p>
+      </div>
+      <div class="card">
+        <h3>Machine Hire</h3>
+        <p>Plate compactors, jumping jacks, jack hammers, mixers and pokers.</p>
+      </div>
     </div>
   </section>
 
   <section class="section">
     <h2>Our Work</h2>
-    <p class="lead">A look at some of our project stages and completed finishes.</p>
+    <p class="lead">
+      A showcase of our project stages, site work and completed finishes.
+    </p>
+
     <div class="gallery">
-      <img src="project1.jpg" alt="Project 1">
-      <img src="project2.jpg" alt="Project 2">
-      <img src="project3.jpg" alt="Project 3">
+      <img src="project1.jpg" alt="Masaisai Civil Works Project 1">
+      <img src="project2.jpg" alt="Masaisai Civil Works Project 2">
+      <img src="project3.jpg" alt="Masaisai Civil Works Project 3">
     </div>
   </section>
 
   <section class="section">
     <h2>About Us</h2>
+
     <div class="about-box">
       <p>
-        <strong>Masaisai Civil Works</strong> is a trusted construction and civil engineering company delivering reliable, high-quality services across Zimbabwe. We specialize in both construction projects and equipment hire, making us a dependable partner for residential, commercial, and infrastructure development.
+        <strong class="highlight">Masaisai Civil Works</strong> is a trusted construction and civil engineering company delivering reliable, high-quality services across Zimbabwe.
       </p>
 
-      <p style="margin-top:15px;">
-        Our work is driven by a commitment to quality, efficiency, and client satisfaction. From site preparation and foundations to structural development and finishing, we provide end-to-end solutions tailored to meet each client’s specific needs.
+      <p>
+        We specialize in construction projects, civil works, finishing, renovations and equipment hire, making us a dependable partner for residential, commercial and infrastructure development.
       </p>
 
-      <p style="margin-top:15px;">
-        In addition to construction, we offer well-maintained machinery for hire, enabling individuals and contractors to execute projects efficiently and cost-effectively. Our equipment includes plate compactors, jumping jacks, jack hammers, concrete mixers, and concrete pokers.
+      <p>
+        Our work is driven by quality, efficiency and client satisfaction. From site preparation and foundations to structural development and finishing, we provide end-to-end solutions tailored to each client’s needs.
       </p>
 
-      <p style="margin-top:15px;">
-        We pride ourselves on delivering projects on time, maintaining high standards of workmanship, offering competitive pricing, and building long-term relationships with our clients.
+      <p>
+        We also offer well-maintained machinery for hire, including plate compactors, jumping jacks, jack hammers, concrete mixers and concrete pokers.
       </p>
 
-      <p style="margin-top:15px;">
-        Our mission is to provide durable construction solutions and accessible equipment hire services that empower our clients to build with confidence.
+      <p>
+        We pride ourselves on delivering projects on time, maintaining high standards of workmanship, offering transparent pricing and building long-term relationships with our clients.
       </p>
 
-      <p style="margin-top:15px; color:#d4af37;">
-        <strong>Masaisai Civil Works — Building Zimbabwe with Quality.</strong>
+      <p class="highlight">
+        Masaisai Civil Works — Building Zimbabwe with Quality.
       </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Why Choose Us</h2>
+    <p class="lead">
+      We combine skilled workmanship, reliable service and practical construction experience.
+    </p>
+
+    <div class="why-grid">
+      <div class="card">
+        <h3>Reliable Delivery</h3>
+        <p>We value timelines, communication and dependable execution.</p>
+      </div>
+      <div class="card">
+        <h3>Quality Workmanship</h3>
+        <p>Every project is handled with care, precision and attention to detail.</p>
+      </div>
+      <div class="card">
+        <h3>Fair Pricing</h3>
+        <p>Clear, competitive and transparent pricing for clients.</p>
+      </div>
+      <div class="card">
+        <h3>Complete Solutions</h3>
+        <p>Construction, finishing, civil works and equipment hire under one brand.</p>
+      </div>
     </div>
   </section>
 
   <section class="section" id="quote">
     <h2>Get a Quote</h2>
-    <p class="lead">Choose the best way to reach us for enquiries and quotations.</p>
+    <p class="lead">
+      Contact us today for construction enquiries, equipment hire and formal quotations.
+    </p>
+
     <div class="quote-options">
       <div class="card">
-        <h3 style="margin-bottom:12px; color:#d4af37;">WhatsApp</h3>
+        <h3>WhatsApp</h3>
         <p style="margin-bottom:15px;">Chat with our admin directly for quick assistance.</p>
         <a class="btn" href="https://wa.me/263710493646">Chat on WhatsApp</a>
       </div>
+
       <div class="card">
-        <h3 style="margin-bottom:12px; color:#d4af37;">Email</h3>
+        <h3>Email</h3>
         <p style="margin-bottom:15px;">Send your project details for a formal quotation.</p>
         <a class="btn" href="mailto:aldridgehove@masaisaicivilworks.com">Send Email</a>
       </div>
@@ -232,12 +387,13 @@
 
   <section class="section">
     <h2>Contact</h2>
+
     <div class="contact-box">
-      <p><strong>Admin (WhatsApp):</strong> <a href="https://wa.me/263710493646">+263 710493646</a></p>
+      <p><strong>Admin WhatsApp:</strong> <a href="https://wa.me/263710493646">+263 710 493 646</a></p>
       <p><strong>Call Engineer Aaldrin Hove:</strong></p>
       <p>
         <a href="tel:+263717663039">+263 71 766 3039</a> /
-        <a href="tel:+263783610479">078 361 0479</a>
+        <a href="tel:+263783610479">+263 78 361 0479</a>
       </p>
       <p><strong>Email:</strong> <a href="mailto:aldridgehove@masaisaicivilworks.com">aldridgehove@masaisaicivilworks.com</a></p>
       <p><strong>Address:</strong> 40 Bond Street, Harare</p>
@@ -245,7 +401,7 @@
   </section>
 
   <footer>
-    © 2026 Masaisai Civil Works
+    © 2026 Masaisai Civil Works. All Rights Reserved.
   </footer>
 
   <a href="https://wa.me/263710493646" class="whatsapp-float">💬</a>
